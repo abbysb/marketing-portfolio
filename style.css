@@ -22,3 +22,50 @@
 .gallery-item figcaption{display:flex;justify-content:space-between;gap:16px;padding:16px 18px;font-size:12px}
 .gallery-item figcaption span{color:var(--muted);text-align:right}
 @media(max-width:800px){.gallery-heading,.gallery-grid{display:block}.gallery-heading p{margin-top:12px}.gallery-item{margin-bottom:16px}.gallery-item img,.gallery-item-featured img{height:360px}.text-only-feature .project-info{padding:30px}}
+
+/* Social content: results bar, spotlight embeds, filterable reel library */
+.social-section{margin:60px 0 20px}
+.results-bar{display:grid;grid-template-columns:repeat(4,1fr) 1.6fr;background:var(--ink);color:white}
+.results-bar div{display:flex;flex-direction:column;gap:6px;padding:26px 24px;border-right:1px solid #333}
+.results-bar div:last-child{border-right:0}
+.results-bar strong{font:700 clamp(30px,3.4vw,46px)/1 "Playfair Display";color:var(--lime)}
+.results-bar span{font-size:12px;color:#cfcfcf;line-height:1.4}
+.results-note{font-size:12px;color:var(--muted);margin:10px 0 0}
+.featured-reels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;align-items:start}
+.featured-reel{margin:0;background:white;border:1px solid var(--line);padding:14px}
+.featured-reel .instagram-media{min-width:0!important;width:100%!important;margin:0!important;border:0!important}
+.featured-reel figcaption{padding:16px 6px 6px}
+.featured-reel figcaption b{display:block;font:700 24px "Playfair Display";margin:8px 0}
+.featured-reel figcaption p{margin:0;color:#666;font-size:14px;line-height:1.55}
+.reel-filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.reel-filters button{font:600 13px "DM Sans";padding:10px 16px;border-radius:50px;border:1px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer}
+.reel-filters button.active{background:var(--ink);color:white}
+.reel-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;align-items:start}
+.reel-card{background:white;border:1px solid var(--line);padding:14px}
+.reel-card[hidden]{display:none}
+.reel-tile{width:100%;aspect-ratio:4/5;border:0;cursor:pointer;display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start;padding:22px;text-align:left;font:700 clamp(26px,2.4vw,34px)/1.05 "Playfair Display";color:var(--ink);transition:transform .2s}
+.reel-tile:hover{transform:scale(.985)}
+.reel-play{width:54px;height:54px;border-radius:50%;background:var(--ink);color:white;display:grid;place-items:center;font:400 18px "DM Sans";padding-left:3px}
+.t-lime{background:var(--lime)}.t-accent{background:var(--accent)}.t-blue{background:var(--blue)}.t-warm{background:#ffc89e}.t-coral{background:#ff9a83}.t-dark{background:#272727;color:white}.t-dark .reel-play{background:var(--lime);color:var(--ink)}
+.reel-card .instagram-media{min-width:0!important;width:100%!important;margin:0!important;border:0!important}
+.reel-meta{display:flex;justify-content:space-between;gap:10px;font-size:12px;padding:14px 4px 0;color:var(--muted)}
+.reel-meta b{color:var(--ink);white-space:nowrap}
+.reel-card p{font-size:14px;line-height:1.5;color:#555;margin:8px 4px 4px}
+.tldr{background:var(--paper);border-left:3px solid var(--ink);padding:14px 16px;margin:16px 0}
+.tldr b{font-size:11px;letter-spacing:.14em}
+.tldr ul{margin:10px 0 0;padding-left:18px}
+.tldr li{font-size:13px;line-height:1.5;color:#444;margin-bottom:8px}
+.tldr li:last-child{margin-bottom:0}
+.contact-actions{flex-wrap:wrap}
+@media(max-width:1000px){.results-bar{grid-template-columns:repeat(2,1fr)}.results-bar div:last-child{grid-column:1/-1}.results-bar div{border-bottom:1px solid #333}.featured-reels,.reel-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){.featured-reels,.reel-grid{grid-template-columns:1fr}}
+a.reel-tile{text-decoration:none}
+.reel-tile small{display:block;font:600 12px "DM Sans";letter-spacing:.04em;margin-top:10px;opacity:.75}
+/* Reel cover photos */
+.reel-tile.has-cover{position:relative;overflow:hidden;background-color:#272727;background-size:cover;background-position:center;color:white;justify-content:space-between}
+.reel-tile.has-cover::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.82) 0%,rgba(0,0,0,.25) 45%,rgba(0,0,0,.1) 70%,rgba(0,0,0,.35) 100%)}
+.reel-tile.has-cover>span{position:relative;z-index:1}
+.reel-tile.has-cover .reel-play{background:white;color:var(--ink)}
+.ig-badge{position:absolute!important;top:22px;right:22px;font:700 11px "DM Sans";letter-spacing:.06em;text-transform:uppercase;background:var(--lime);color:var(--ink);padding:7px 10px;border-radius:50px}
+.reel-tile.has-cover small{opacity:.9}
+.reel-tile.has-cover .reel-play{visibility:hidden}
